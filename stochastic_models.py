@@ -26,7 +26,8 @@ class GBM(StochasticProcess):
         paths[:, 0] = self.s0
 
         drift = (self.mu - 0.5 * self.sigma**2) * dt
-        vol = self.sigma * np.sqrt(dt)
+        vol = self.sigma * np.sqrt(dt) 
+        
 
         # Træk alle shocks på én gang – hurtigere
         shocks = np.random.normal(0, 1, size=(n_paths, n_steps))
